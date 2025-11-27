@@ -1,0 +1,14 @@
+{
+  "name": "top-down-shooter",
+  "version": "1.0.0",
+  "description": "Multiplayer top-down shooter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "shortid": "^2.2.16"
+  }
+}
