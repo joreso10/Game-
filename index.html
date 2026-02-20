@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadow Blade: Ascendant Realms</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hud">
+    <div class="titleBlock">
+      <h1>Shadow Blade: Ascendant Realms</h1>
+      <p>A cinematic side-view ninja campaign with camera follow, upgrades, and advanced abilities.</p>
+    </div>
+    <div class="statGrid">
+      <div id="levelLabel">Level 1 / 40</div>
+      <div id="objective">Clear enemies and collect relics.</div>
+      <div id="abilityStatus">Cooldowns ready.</div>
+      <div id="runStats">HP 120 · Coins 0 · Score 0</div>
+      <div id="unlockStatus">Unlocked: Shuriken Burst</div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="gameWrap">
+      <canvas id="game" width="1400" height="760"></canvas>
+      <div class="overlayTips" id="overlayTips">WASD to move, Mouse to aim, 1-8 abilities</div>
+    </section>
+
+    <aside class="panel">
+      <h2>Progression</h2>
+      <ul>
+        <li>40 levels with rising difficulty and enemy variety.</li>
+        <li>Shop floors at 10 / 20 / 30 / 40.</li>
+        <li>Camera follows with smooth motion + impact shake.</li>
+      </ul>
+
+      <h2>Ability Unlocks</h2>
+      <ul id="abilityList"></ul>
+
+      <h2>Shop (keys 1-4 on shop floors)</h2>
+      <ul>
+        <li>1: +25 Max HP (160 coins)</li>
+        <li>2: +12% Damage (180 coins)</li>
+        <li>3: -10% Cooldowns (170 coins)</li>
+        <li>4: +8% Move Speed (160 coins)</li>
+      </ul>
+
+      <button id="restartBtn">Restart Campaign</button>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
