@@ -1,23 +1,25 @@
-# Shadow Blade: Sideview Trials+
+# Shadow Blade: Trials Ascending
 
-A bigger **2D side-view ninja campaign** focused on passing levels with deeper gameplay.
+A side-view ninja campaign with a real learning curve, unlockable abilities, and shop milestones.
 
-## New Improvements
-- Expanded from 3 to **6 full levels** with different layouts and traversal routes.
-- Added **relic collection objectives** required to unlock each exit gate.
-- Added **checkpoint flags** so failures restart from recent progress points.
-- Added more enemy gameplay with multiple types:
-  - Patrol melee
-  - Shooter ranged attackers
-  - Jumper enemies with vertical pressure
-- Added a fifth ability: **Skyfall Rain** for area damage.
-- Added run stats (HP, relic count, score, timer) and improved cooldown HUD.
+## What's New
+- **30 levels total** with scaling difficulty and enemy density.
+- **Shop floor every 10 levels** (10, 20, 30) to spend coins on permanent upgrades.
+- **Ability unlock progression**:
+  - L1: Shuriken Burst
+  - L3: Dash Slash
+  - L6: Smoke Phase
+  - L9: Grapple Pull
+  - L12: Skyfall Rain
+  - L18: Blade Fury
+- Better long-run systems: coin economy, upgrade choices, cooldown scaling, and stronger late-game enemies.
 
 ## Controls
-- Move: `A/D`
+- Move: `A` / `D`
 - Jump / Wall Jump: `W` or `Space`
-- Attack: `Mouse Click`
-- Abilities: `1-5`
+- Basic attack: mouse click
+- Abilities: `1-6`
+- Shop purchases (shop levels): `1-3`
 
 ## Run
 ```bash

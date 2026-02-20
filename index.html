@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shadow Blade: Sideview Trials+</title>
+  <title>Shadow Blade: Trials Ascending</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hud">
     <div>
-      <h1>Shadow Blade: Sideview Trials+</h1>
-      <p>Move A/D · Jump W/Space · Attack Click · Abilities 1-5 · Wall Jump enabled</p>
+      <h1>Shadow Blade: Trials Ascending</h1>
+      <p>Move A/D · Jump W/Space · Attack Click · Abilities 1-6 · Shop every 10 levels</p>
     </div>
     <div class="stats">
-      <div id="levelLabel">Level 1</div>
-      <div id="objective">Reach exit after clearing enemies and collecting relics.</div>
+      <div id="levelLabel">Level 1 / 30</div>
+      <div id="objective">Clear enemies and collect relics to open the gate.</div>
       <div id="abilityStatus">Cooldowns ready.</div>
-      <div id="runStats">HP 120 · Relics 0 · Score 0</div>
+      <div id="runStats">HP 120 · Coins 0 · Score 0</div>
+      <div id="unlockStatus">Unlocked: Shuriken Burst</div>
     </div>
   </header>
 
@@ -24,21 +25,21 @@
     <canvas id="game" width="1200" height="700"></canvas>
 
     <aside class="panel">
-      <h2>Campaign Upgrades</h2>
+      <h2>Learning Curve</h2>
       <ul>
-        <li>6 handcrafted levels</li>
-        <li>Checkpoint flags</li>
-        <li>Relic collection objectives</li>
-        <li>Patrol, Shooter, and Jumper enemies</li>
+        <li>Levels 1-9: movement + core combat</li>
+        <li>Every 10th level: <b>Shop floor</b></li>
+        <li>Late levels scale enemy count/speed</li>
       </ul>
 
-      <h2>Ninja Abilities</h2>
+      <h2>Ability Unlock Path</h2>
+      <ul id="abilityList"></ul>
+
+      <h2>Shop Controls (Levels 10/20/30)</h2>
       <ul>
-        <li><b>1</b> Shuriken Burst</li>
-        <li><b>2</b> Dash Slash</li>
-        <li><b>3</b> Smoke Phase (invulnerability)</li>
-        <li><b>4</b> Grapple Pull</li>
-        <li><b>5</b> Skyfall Rain (area projectiles)</li>
+        <li>Press <b>1</b>: +20 Max HP (120 coins)</li>
+        <li>Press <b>2</b>: +15% Damage (150 coins)</li>
+        <li>Press <b>3</b>: -10% Cooldowns (140 coins)</li>
       </ul>
 
       <button id="restartBtn">Restart Campaign</button>
