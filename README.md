@@ -1,25 +1,26 @@
-# Shadow Blade: Trials Ascending
+# Shadow Blade: Ascendant Realms
 
-A side-view ninja campaign with a real learning curve, unlockable abilities, and shop milestones.
+Upgraded cinematic 2D ninja action game with a stronger learning curve and richer progression.
 
-## What's New
-- **30 levels total** with scaling difficulty and enemy density.
-- **Shop floor every 10 levels** (10, 20, 30) to spend coins on permanent upgrades.
-- **Ability unlock progression**:
-  - L1: Shuriken Burst
-  - L3: Dash Slash
-  - L6: Smoke Phase
-  - L9: Grapple Pull
-  - L12: Skyfall Rain
-  - L18: Blade Fury
-- Better long-run systems: coin economy, upgrade choices, cooldown scaling, and stronger late-game enemies.
+## Major Upgrades
+- **40 campaign levels** with scaling difficulty and more enemy variety.
+- **Better graphics**: layered parallax backgrounds, animated relics/flags, enemy pulse effects, beam VFX, and particle impacts.
+- **Better gameplay progression**: unlockable abilities from level 1 to 32.
+- **More and better abilities (8 total)** including Shadow Blink and Dragon Beam.
+- **Shop floors every 10 levels** (10/20/30/40) with permanent upgrades:
+  - HP
+  - Damage
+  - Cooldown reduction
+  - Movement speed
+- **Improved UI** with unlock status, progression hints, run stats, and ability panel.
+- **Animated camera follow** with smooth look-ahead, breathing motion, and hit/dash camera shake.
 
 ## Controls
-- Move: `A` / `D`
+- Move: `A/D`
 - Jump / Wall Jump: `W` or `Space`
-- Basic attack: mouse click
-- Abilities: `1-6`
-- Shop purchases (shop levels): `1-3`
+- Attack: Mouse click
+- Abilities: `1-8`
+- Shop buys (on shop levels): `1-4`
 
 ## Run
 ```bash

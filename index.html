@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shadow Blade: Trials Ascending</title>
+  <title>Shadow Blade: Ascendant Realms</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hud">
-    <div>
-      <h1>Shadow Blade: Trials Ascending</h1>
-      <p>Move A/D · Jump W/Space · Attack Click · Abilities 1-6 · Shop every 10 levels</p>
+    <div class="titleBlock">
+      <h1>Shadow Blade: Ascendant Realms</h1>
+      <p>A cinematic side-view ninja campaign with camera follow, upgrades, and advanced abilities.</p>
     </div>
-    <div class="stats">
-      <div id="levelLabel">Level 1 / 30</div>
-      <div id="objective">Clear enemies and collect relics to open the gate.</div>
+    <div class="statGrid">
+      <div id="levelLabel">Level 1 / 40</div>
+      <div id="objective">Clear enemies and collect relics.</div>
       <div id="abilityStatus">Cooldowns ready.</div>
       <div id="runStats">HP 120 · Coins 0 · Score 0</div>
       <div id="unlockStatus">Unlocked: Shuriken Burst</div>
@@ -22,24 +22,28 @@
   </header>
 
   <main class="layout">
-    <canvas id="game" width="1200" height="700"></canvas>
+    <section class="gameWrap">
+      <canvas id="game" width="1400" height="760"></canvas>
+      <div class="overlayTips" id="overlayTips">WASD to move, Mouse to aim, 1-8 abilities</div>
+    </section>
 
     <aside class="panel">
-      <h2>Learning Curve</h2>
+      <h2>Progression</h2>
       <ul>
-        <li>Levels 1-9: movement + core combat</li>
-        <li>Every 10th level: <b>Shop floor</b></li>
-        <li>Late levels scale enemy count/speed</li>
+        <li>40 levels with rising difficulty and enemy variety.</li>
+        <li>Shop floors at 10 / 20 / 30 / 40.</li>
+        <li>Camera follows with smooth motion + impact shake.</li>
       </ul>
 
-      <h2>Ability Unlock Path</h2>
+      <h2>Ability Unlocks</h2>
       <ul id="abilityList"></ul>
 
-      <h2>Shop Controls (Levels 10/20/30)</h2>
+      <h2>Shop (keys 1-4 on shop floors)</h2>
       <ul>
-        <li>Press <b>1</b>: +20 Max HP (120 coins)</li>
-        <li>Press <b>2</b>: +15% Damage (150 coins)</li>
-        <li>Press <b>3</b>: -10% Cooldowns (140 coins)</li>
+        <li>1: +25 Max HP (160 coins)</li>
+        <li>2: +12% Damage (180 coins)</li>
+        <li>3: -10% Cooldowns (170 coins)</li>
+        <li>4: +8% Move Speed (160 coins)</li>
       </ul>
 
       <button id="restartBtn">Restart Campaign</button>
