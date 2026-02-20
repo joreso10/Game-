@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadow Blade: Sideview Trials</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hud">
+    <div>
+      <h1>Shadow Blade: Sideview Trials</h1>
+      <p>Move: A/D · Jump: W or Space · Attack: Click · Abilities: 1-4</p>
+    </div>
+    <div class="stats">
+      <div id="levelLabel">Level 1 / 5</div>
+      <div id="objective">Reach the gate, defeat enemies, and survive traps.</div>
+      <div id="abilityStatus">Abilities ready.</div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <canvas id="game" width="1200" height="700"></canvas>
+
+    <aside class="panel">
+      <h2>Goal</h2>
+      <p>Pass all levels. Each level unlocks the next challenge map.</p>
+
+      <h2>Ninja Abilities</h2>
+      <ul>
+        <li><strong>1 - Shuriken Burst:</strong> 3 fast projectiles.</li>
+        <li><strong>2 - Dash Slash:</strong> horizontal speed + blade hitbox.</li>
+        <li><strong>3 - Smoke Phase:</strong> short invulnerability.</li>
+        <li><strong>4 - Grapple Pull:</strong> pull toward mouse target.</li>
+      </ul>
+
+      <h2>Core Movement</h2>
+      <ul>
+        <li>Ground jump + air control</li>
+        <li><strong>Wall slide + wall jump</strong></li>
+        <li>Hazards and enemy patrol zones</li>
+      </ul>
+
+      <button id="restartBtn">Restart Run</button>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
