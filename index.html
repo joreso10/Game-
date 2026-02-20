@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shadow Blade: Sideview Trials</title>
+  <title>Shadow Blade: Sideview Trials+</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hud">
     <div>
-      <h1>Shadow Blade: Sideview Trials</h1>
-      <p>Move: A/D · Jump: W or Space · Attack: Click · Abilities: 1-4</p>
+      <h1>Shadow Blade: Sideview Trials+</h1>
+      <p>Move A/D · Jump W/Space · Attack Click · Abilities 1-5 · Wall Jump enabled</p>
     </div>
     <div class="stats">
-      <div id="levelLabel">Level 1 / 5</div>
-      <div id="objective">Reach the gate, defeat enemies, and survive traps.</div>
-      <div id="abilityStatus">Abilities ready.</div>
+      <div id="levelLabel">Level 1</div>
+      <div id="objective">Reach exit after clearing enemies and collecting relics.</div>
+      <div id="abilityStatus">Cooldowns ready.</div>
+      <div id="runStats">HP 120 · Relics 0 · Score 0</div>
     </div>
   </header>
 
@@ -23,25 +24,24 @@
     <canvas id="game" width="1200" height="700"></canvas>
 
     <aside class="panel">
-      <h2>Goal</h2>
-      <p>Pass all levels. Each level unlocks the next challenge map.</p>
+      <h2>Campaign Upgrades</h2>
+      <ul>
+        <li>6 handcrafted levels</li>
+        <li>Checkpoint flags</li>
+        <li>Relic collection objectives</li>
+        <li>Patrol, Shooter, and Jumper enemies</li>
+      </ul>
 
       <h2>Ninja Abilities</h2>
       <ul>
-        <li><strong>1 - Shuriken Burst:</strong> 3 fast projectiles.</li>
-        <li><strong>2 - Dash Slash:</strong> horizontal speed + blade hitbox.</li>
-        <li><strong>3 - Smoke Phase:</strong> short invulnerability.</li>
-        <li><strong>4 - Grapple Pull:</strong> pull toward mouse target.</li>
+        <li><b>1</b> Shuriken Burst</li>
+        <li><b>2</b> Dash Slash</li>
+        <li><b>3</b> Smoke Phase (invulnerability)</li>
+        <li><b>4</b> Grapple Pull</li>
+        <li><b>5</b> Skyfall Rain (area projectiles)</li>
       </ul>
 
-      <h2>Core Movement</h2>
-      <ul>
-        <li>Ground jump + air control</li>
-        <li><strong>Wall slide + wall jump</strong></li>
-        <li>Hazards and enemy patrol zones</li>
-      </ul>
-
-      <button id="restartBtn">Restart Run</button>
+      <button id="restartBtn">Restart Campaign</button>
     </aside>
   </main>
 
