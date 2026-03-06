@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Miner 3D</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="hud">
+      <div class="panel left">
+        <h1>STAR MINER 3D</h1>
+        <p><strong>WASD</strong> move, <strong>Shift/Space</strong> down/up, mouse to look</p>
+        <p><strong>Left Click</strong> mine/fire, <strong>E</strong> dock/undock, <strong>F</strong> quick repair</p>
+        <p><strong>1-4</strong> station services, <strong>5-7</strong> accept mission</p>
+      </div>
+      <div class="panel right stats">
+        <p>Hull: <span id="hull">100</span>%</p>
+        <p>Fuel: <span id="fuel">100</span>%</p>
+        <p>Cargo: <span id="cargo">0</span> / <span id="cargoCap">100</span></p>
+        <p>Credits: <span id="credits">0</span></p>
+        <p>Reputation: <span id="reputation">0</span></p>
+        <p>Wave: <span id="wave">1</span></p>
+        <p>Sector: <span id="sector">Core Belt</span></p>
+        <p id="message">Mine asteroids and return to station to sell.</p>
+      </div>
+    </div>
+
+    <aside id="stationMenu" class="panel hidden">
+      <h2>STATION LIFE</h2>
+      <p id="stationSummary">Docked at Cinder Ring</p>
+      <ul>
+        <li><strong>1</strong> Sell all ore + auto-complete jobs</li>
+        <li><strong>2</strong> Refuel + repair bay</li>
+        <li><strong>3</strong> Upgrade cargo bay (+25) + mining power</li>
+        <li><strong>4</strong> Crew rest (delay next wave)</li>
+      </ul>
+      <p id="contractInfo">Active contracts: none</p>
+      <div id="missionBoard"></div>
+      <p id="stationLog">Station log idle...</p>
+    </aside>
+
+    <div id="runSummary" class="panel hidden">
+      <h2>RUN SUMMARY</h2>
+      <p id="summaryStats">-</p>
+      <p>Press <strong>R</strong> to restart run.</p>
+    </div>
+
+    <div id="crosshair">+</div>
+    <canvas id="game"></canvas>
+    <script type="module" src="game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, Segoe UI, Roboto, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #0f1b2f, #030712 72%);
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.panel {
+  background: rgba(8, 11, 22, 0.64);
+  border: 1px solid rgba(117, 190, 255, 0.45);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  max-width: 30rem;
+  backdrop-filter: blur(3px);
+}
+
+.panel h1,
+.panel h2,
+.panel h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+}
+
+.panel p,
+.panel li {
+  margin: 0.22rem 0;
+  font-size: 0.9rem;
+}
+
+.stats {
+  min-width: 14.5rem;
+}
+
+#message {
+  margin-top: 0.6rem;
+  color: #8ae9ff;
+}
+
+#crosshair {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.4rem;
+  color: rgba(225, 247, 255, 0.9);
+  text-shadow: 0 0 8px #6ed7ff;
+  pointer-events: none;
+}
+
+#stationMenu {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  width: min(30rem, calc(100vw - 2rem));
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+#stationMenu ul {
+  margin: 0.35rem 0 0.6rem;
+  padding-left: 1.1rem;
+}
+
+#stationSummary {
+  color: #90deff;
+}
+
+#contractInfo {
+  color: #ffd998;
+}
+
+#missionBoard {
+  border: 1px solid rgba(170, 226, 255, 0.3);
+  border-radius: 0.5rem;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.5rem;
+  background: rgba(5, 12, 20, 0.45);
+}
+
+#missionBoard p {
+  margin: 0.2rem 0;
+  font-size: 0.82rem;
+}
+
+#stationLog {
+  color: #9bffce;
+  margin-top: 0.45rem;
+}
+
+#runSummary {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: min(22rem, calc(100vw - 2rem));
+  pointer-events: none;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(0.45rem);
+}
+
+#stationMenu:not(.hidden),
+#runSummary:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
