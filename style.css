@@ -1,0 +1,138 @@
+:root {
+  color-scheme: dark;
+  --bg: #02060f;
+  --panel: #0a1428;
+  --accent: #57d0ff;
+  --accent-2: #3b89ff;
+  --text: #dff4ff;
+  --warn: #ff9f5a;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #123 0%, var(--bg) 45%, #010308 100%);
+  color: var(--text);
+}
+
+.game-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.topbar {
+  border: 1px solid #1f3457;
+  background: rgba(10, 20, 40, 0.8);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.topbar h1 {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+}
+
+.hud {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.panel {
+  border: 1px solid #1f3457;
+  border-radius: 1rem;
+  background: rgba(10, 20, 40, 0.85);
+  padding: 1rem;
+}
+
+h2 {
+  margin-top: 0;
+  color: #95d9ff;
+}
+
+.meter-row {
+  margin: 0.7rem 0;
+}
+
+progress {
+  width: 100%;
+  height: 1rem;
+}
+
+.dhd-grid {
+  margin-top: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.symbol-btn {
+  border: 1px solid #3d6fb8;
+  background: #081123;
+  color: var(--text);
+  border-radius: 0.5rem;
+  padding: 0.45rem;
+  cursor: pointer;
+}
+
+.symbol-btn.selected {
+  border-color: var(--accent);
+  background: #113360;
+}
+
+.dial-controls {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+button {
+  border: 1px solid var(--accent-2);
+  background: #10264d;
+  color: var(--text);
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.55rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.log {
+  min-height: 240px;
+  max-height: 360px;
+  overflow: auto;
+  border: 1px solid #2a416a;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  background: #050b18;
+  margin-bottom: 0.75rem;
+}
+
+.log p {
+  margin: 0 0 0.5rem;
+}
+
+.warn {
+  color: var(--warn);
+}

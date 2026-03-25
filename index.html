@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stargate Exploration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <h1>Stargate Exploration Command</h1>
+      <div class="hud">
+        <span>Energy: <strong id="energy">100</strong></span>
+        <span>Supplies: <strong id="supplies">50</strong></span>
+        <span>Artifacts: <strong id="artifacts">0</strong></span>
+      </div>
+    </header>
+
+    <section class="layout">
+      <article class="panel world-panel">
+        <h2>Current World</h2>
+        <p id="world-name">Earth (SGC)</p>
+        <p id="world-description">Initialize your mission and dial a gate address from the DHD.</p>
+        <div class="meter-row">
+          <label for="hazard">Hazard</label>
+          <progress id="hazard" max="100" value="0"></progress>
+        </div>
+        <div class="meter-row">
+          <label for="reward">Discovery Potential</label>
+          <progress id="reward" max="100" value="0"></progress>
+        </div>
+      </article>
+
+      <article class="panel dhd-panel">
+        <h2>DHD Dialer</h2>
+        <p>Select up to seven symbols and engage the chevron to travel.</p>
+        <div id="dhd-grid" class="dhd-grid" aria-label="DHD symbols"></div>
+        <div class="dial-controls">
+          <p>Address: <span id="address">-</span></p>
+          <button id="clear-address" type="button">Clear</button>
+          <button id="dial-address" type="button">Engage Chevron</button>
+        </div>
+      </article>
+
+      <article class="panel log-panel">
+        <h2>Mission Log</h2>
+        <div id="log" class="log"></div>
+        <div class="actions">
+          <button id="explore" type="button">Explore</button>
+          <button id="scavenge" type="button">Scavenge</button>
+          <button id="rest" type="button">Regroup</button>
+          <button id="return" type="button">Return to Earth</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
