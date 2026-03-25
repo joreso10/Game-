@@ -1,0 +1,137 @@
+:root {
+  color-scheme: dark;
+  --bg: #02060f;
+  --panel: #0a1428;
+  --accent: #57d0ff;
+  --accent-2: #3b89ff;
+  --text: #dff4ff;
+  --warn: #ff9f5a;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #163359 0%, var(--bg) 42%, #010308 100%);
+  color: var(--text);
+}
+
+.game-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.topbar,
+.panel {
+  border: 1px solid #1f3457;
+  background: rgba(10, 20, 40, 0.86);
+  border-radius: 1rem;
+}
+
+.topbar {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.topbar h1 {
+  margin: 0 0 0.55rem;
+  color: var(--accent);
+}
+
+.hud {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.panel {
+  padding: 1rem;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+  color: #9adfff;
+}
+
+.meter-row {
+  margin: 0.65rem 0;
+}
+
+progress {
+  width: 100%;
+  height: 1rem;
+}
+
+.move-options,
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.dhd-grid {
+  margin-top: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.45rem;
+}
+
+.dial-controls {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+button {
+  border: 1px solid var(--accent-2);
+  background: #10264d;
+  color: var(--text);
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.55rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.12);
+}
+
+.symbol-btn {
+  border-color: #3d6fb8;
+  background: #081123;
+}
+
+.symbol-btn.selected {
+  border-color: var(--accent);
+  background: #113360;
+}
+
+.log {
+  min-height: 220px;
+  max-height: 340px;
+  overflow: auto;
+  border: 1px solid #2a416a;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  background: #050b18;
+  margin-top: 0.55rem;
+}
+
+.log p {
+  margin: 0 0 0.45rem;
+}
+
+.warn {
+  color: var(--warn);
+}
