@@ -16,55 +16,57 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #123 0%, var(--bg) 45%, #010308 100%);
+  background: radial-gradient(circle at top, #163359 0%, var(--bg) 42%, #010308 100%);
   color: var(--text);
 }
 
 .game-shell {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-.topbar {
+.topbar,
+.panel {
   border: 1px solid #1f3457;
-  background: rgba(10, 20, 40, 0.8);
+  background: rgba(10, 20, 40, 0.86);
   border-radius: 1rem;
+}
+
+.topbar {
   padding: 1rem;
   margin-bottom: 1rem;
 }
 
 .topbar h1 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.55rem;
   color: var(--accent);
 }
 
 .hud {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
 
 .panel {
-  border: 1px solid #1f3457;
-  border-radius: 1rem;
-  background: rgba(10, 20, 40, 0.85);
   padding: 1rem;
 }
 
-h2 {
+h2,
+h3 {
   margin-top: 0;
-  color: #95d9ff;
+  color: #9adfff;
 }
 
 .meter-row {
-  margin: 0.7rem 0;
+  margin: 0.65rem 0;
 }
 
 progress {
@@ -72,29 +74,22 @@ progress {
   height: 1rem;
 }
 
-.dhd-grid {
-  margin-top: 0.75rem;
+.move-options,
+.actions {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.5rem;
 }
 
-.symbol-btn {
-  border: 1px solid #3d6fb8;
-  background: #081123;
-  color: var(--text);
-  border-radius: 0.5rem;
-  padding: 0.45rem;
-  cursor: pointer;
-}
-
-.symbol-btn.selected {
-  border-color: var(--accent);
-  background: #113360;
+.dhd-grid {
+  margin-top: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.45rem;
 }
 
 .dial-controls {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   display: grid;
   gap: 0.5rem;
 }
@@ -109,28 +104,32 @@ button {
 }
 
 button:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.12);
 }
 
-.actions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5rem;
+.symbol-btn {
+  border-color: #3d6fb8;
+  background: #081123;
+}
+
+.symbol-btn.selected {
+  border-color: var(--accent);
+  background: #113360;
 }
 
 .log {
-  min-height: 240px;
-  max-height: 360px;
+  min-height: 220px;
+  max-height: 340px;
   overflow: auto;
   border: 1px solid #2a416a;
   border-radius: 0.75rem;
   padding: 0.75rem;
   background: #050b18;
-  margin-bottom: 0.75rem;
+  margin-top: 0.55rem;
 }
 
 .log p {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.45rem;
 }
 
 .warn {

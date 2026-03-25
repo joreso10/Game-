@@ -1,37 +1,49 @@
-# Stargate Exploration Game
+# Tau'ri Base Explorer (Stargate)
 
-A single-player Stargate-themed browser game where you interact with a DHD (Dial Home Device), dial seven-symbol gate addresses, travel to alien worlds, and manage your expedition resources.
+A single-player Stargate browser game where you play as a **Tau'ri explorer** moving freely around the SGC base, entering the **Control Room** to dial the gate, and traveling to off-world destinations.
 
-## Features
+## What Changed
 
-- Interactive DHD symbol pad with seven-chevron dialing.
-- Multiple unique worlds with fixed gate addresses.
-- Resource management gameplay:
-  - **Energy**
-  - **Supplies**
-  - **Artifacts recovered**
-- Mission actions per world:
-  - **Explore**
-  - **Scavenge**
-  - **Regroup**
-  - **Return to Earth**
-- Mission log with outcomes and warnings.
+This game now supports a stronger roleplay loop:
+- Move room-to-room inside your base (SGC).
+- Reach the **SGC Control Room** to unlock dialing.
+- Dial seven-symbol addresses and travel to specific worlds.
+- Explore local zones on those worlds and return safely.
 
-## How to Play
+## Destinations
 
-1. Open `index.html` in a browser.
-2. Use the DHD panel to select exactly **7 symbols**.
-3. Press **Engage Chevron** to travel.
-4. On a valid world, use action buttons to gather artifacts and survive hazards.
-5. Balance resources to avoid running out of operational capacity.
+The current known destinations are:
+- **Atlantis**
+- **Midway Station**
+- **PR-233**
 
-## Known World Addresses
+## Gameplay Loop
 
-- **Abydos**: Aldebaran → Bastet → Orion → Hydra → Vega → Draco → Aries
-- **P3X-888**: Anubis → Cronus → Cetus → Serpens → Orion → Taurus → Aquila
-- **PX7-941**: Auriga → Phoenix → Centauri → Perseus → Hydra → Aries → Vega
-- **M4C-862**: Draco → Erebus → Aquila → Heliopolis → Cetus → Bastet → Taurus
-- **Niflheim Outpost**: Vega → Perseus → Aldebaran → Serpens → Phoenix → Cronus → Hydra
+1. Start in the **SGC Gateroom**.
+2. Move through base rooms using **Available Paths**.
+3. Enter **SGC Control Room**.
+4. Select exactly **7 symbols** and click **Dial Stargate**.
+5. Once off-world, move between zones, gather intel, and manage resources.
+6. Use **Return to SGC** to come home.
+
+## Systems
+
+- **Movement**: Base paths and world-zone traversal.
+- **Dialing**: 7-chevron address validation.
+- **Resources**:
+  - Energy
+  - Supplies
+  - Intel
+- **Actions**:
+  - Explore Area
+  - Resupply
+  - Rest
+  - Return to SGC
+- **Mission Log**: Tracks status, successes, warnings, and travel events.
+
+## Run
+
+Open `index.html` in any modern browser.
 
 ## Tech
 

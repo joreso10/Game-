@@ -3,55 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stargate Exploration</title>
+  <title>Tau'ri Base Explorer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="game-shell">
     <header class="topbar">
-      <h1>Stargate Exploration Command</h1>
+      <h1>Tau'ri Stargate Base Explorer</h1>
       <div class="hud">
+        <span>Location: <strong id="location">SGC - Gateroom</strong></span>
         <span>Energy: <strong id="energy">100</strong></span>
-        <span>Supplies: <strong id="supplies">50</strong></span>
-        <span>Artifacts: <strong id="artifacts">0</strong></span>
+        <span>Supplies: <strong id="supplies">45</strong></span>
+        <span>Intel: <strong id="intel">0</strong></span>
       </div>
     </header>
 
     <section class="layout">
-      <article class="panel world-panel">
-        <h2>Current World</h2>
-        <p id="world-name">Earth (SGC)</p>
-        <p id="world-description">Initialize your mission and dial a gate address from the DHD.</p>
+      <article class="panel nav-panel">
+        <h2>Movement & Area Intel</h2>
+        <p id="area-description">You are in the SGC Gateroom. Move through the base and reach the Control Room to dial out.</p>
         <div class="meter-row">
-          <label for="hazard">Hazard</label>
-          <progress id="hazard" max="100" value="0"></progress>
+          <label for="threat">Threat Level</label>
+          <progress id="threat" max="100" value="5"></progress>
         </div>
         <div class="meter-row">
-          <label for="reward">Discovery Potential</label>
-          <progress id="reward" max="100" value="0"></progress>
+          <label for="opportunity">Opportunity</label>
+          <progress id="opportunity" max="100" value="25"></progress>
+        </div>
+        <div class="move-block">
+          <h3>Available Paths</h3>
+          <div id="move-options" class="move-options"></div>
         </div>
       </article>
 
       <article class="panel dhd-panel">
-        <h2>DHD Dialer</h2>
-        <p>Select up to seven symbols and engage the chevron to travel.</p>
+        <h2>Control Room Dial Console</h2>
+        <p>Dialing is unlocked only while you are standing in the <strong>SGC Control Room</strong>.</p>
         <div id="dhd-grid" class="dhd-grid" aria-label="DHD symbols"></div>
         <div class="dial-controls">
           <p>Address: <span id="address">-</span></p>
-          <button id="clear-address" type="button">Clear</button>
-          <button id="dial-address" type="button">Engage Chevron</button>
+          <button id="clear-address" type="button">Clear Address</button>
+          <button id="dial-address" type="button">Dial Stargate</button>
         </div>
       </article>
 
       <article class="panel log-panel">
-        <h2>Mission Log</h2>
-        <div id="log" class="log"></div>
+        <h2>Action Console</h2>
         <div class="actions">
-          <button id="explore" type="button">Explore</button>
-          <button id="scavenge" type="button">Scavenge</button>
-          <button id="rest" type="button">Regroup</button>
-          <button id="return" type="button">Return to Earth</button>
+          <button id="explore" type="button">Explore Area</button>
+          <button id="resupply" type="button">Resupply</button>
+          <button id="rest" type="button">Rest</button>
+          <button id="return" type="button">Return to SGC</button>
         </div>
+        <h3>Mission Log</h3>
+        <div id="log" class="log"></div>
       </article>
     </section>
   </main>
