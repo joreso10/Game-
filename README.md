@@ -1,6 +1,6 @@
 # Cosmic Core Clicker
 
-A complete browser clicker game built with plain HTML, CSS, and JavaScript. Mine a planet, build orbital infrastructure, create research stations, launch shipyard fleets, and colonize increasingly valuable planets for exponential growth.
+A complete low-poly pixel browser clicker game built with plain HTML, CSS, and JavaScript. Mine a planet, build orbital infrastructure, create research stations, launch shipyard fleets, and colonize increasingly valuable planets for exponential growth.
 
 ## Play locally
 
@@ -17,6 +17,7 @@ Then visit <http://localhost:3000>.
 - Planet-click mining with animated ore bursts.
 - Exponential upgrades for core drills, space elevators, orbital research stations, shipyard fleets, and quantum AI labs.
 - Automated ore and research production per second.
-- Visual spaceships, space elevator cargo lifts, and an orbital research station.
+- Low-poly pixel visual style with blocky spaceships, space elevator cargo lifts, and an orbital research station.
+- Lightweight update loop that avoids rebuilding the UI every animation frame.
 - Planet colonization loop with escalating ore/research costs and compounding production multipliers.
 - Local save, auto-save, offline progress, and reset controls.

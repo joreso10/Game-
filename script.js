@@ -67,7 +67,8 @@ const defaultState = {
 };
 
 let state = loadGame();
-let lastFrame = performance.now();
+let lastTickTime = Date.now();
+let lastUpgradeSignature = "";
 
 const elements = {
   oreCount: document.querySelector("#oreCount"),
@@ -196,7 +197,18 @@ function expand() {
   render();
 }
 
-function renderUpgrades() {
+function upgradeSignature() {
+  return upgrades.map(upgrade => {
+    const cost = upgradeCost(upgrade);
+    return `${upgrade.id}:${state.upgrades[upgrade.id]}:${canAfford(cost)}`;
+  }).join("|");
+}
+
+function renderUpgrades(force = false) {
+  const signature = upgradeSignature();
+  if (!force && signature === lastUpgradeSignature) return;
+
+  lastUpgradeSignature = signature;
   elements.upgradeList.innerHTML = "";
   upgrades.forEach(upgrade => {
     const cost = upgradeCost(upgrade);
@@ -212,8 +224,16 @@ function renderUpgrades() {
   });
 }
 
-function render() {
+function renderScene() {
   const planet = currentPlanet();
+  elements.planetName.textContent = planet.name;
+  elements.planetTier.textContent = `Tier ${state.planetIndex + 1}`;
+  elements.mineTitle.textContent = `Mine ${planet.name}`;
+  elements.expansionText.textContent = `Prepare a colony fleet for tier ${state.planetIndex + 2}. Each planet compounds production, unlocks richer ore, and makes the next leap dramatically larger.`;
+  elements.planetButton.style.background = planet.hue;
+}
+
+function renderStats() {
   const expansion = expansionCost();
   const expansionRatio = Math.min(1, Math.min(state.ore / expansion.ore, state.research / expansion.research));
 
@@ -222,26 +242,26 @@ function render() {
   elements.orePerSecond.textContent = `${formatNumber(orePerSecond())} / sec`;
   elements.researchPerSecond.textContent = `${formatNumber(researchPerSecond())} / sec`;
   elements.fleetPower.textContent = `${formatNumber((fleetMultiplier() - 1) * 100)}%`;
-  elements.planetName.textContent = planet.name;
-  elements.planetTier.textContent = `Tier ${state.planetIndex + 1}`;
-  elements.mineTitle.textContent = `Mine ${planet.name}`;
   elements.mineDescription.textContent = `Click yield: ${formatNumber(clickValue())} ore. Planet multiplier: x${formatNumber(planetMultiplier())}. Total clicks: ${formatNumber(state.totalClicks)}.`;
   elements.expansionCost.textContent = `Cost: ${formatNumber(expansion.ore)} ore + ${formatNumber(expansion.research)} research`;
-  elements.expansionText.textContent = `Prepare a colony fleet for tier ${state.planetIndex + 2}. Each planet compounds production, unlocks richer ore, and makes the next leap dramatically larger.`;
   elements.expansionProgress.style.width = `${expansionRatio * 100}%`;
   elements.expandBtn.disabled = !canAfford(expansion);
-  document.documentElement.style.setProperty("--planet-hue", planet.hue);
-  elements.planetButton.style.background = `radial-gradient(circle at 30% 26%, #fff4a8 0 2%, #66f0c7 13%, ${planet.hue} 34%, #2441a4 58%, #19144f 100%)`;
   renderUpgrades();
 }
 
-function tick(now) {
-  const delta = Math.min(1, (now - lastFrame) / 1000);
-  lastFrame = now;
+function render(forceUpgrades = false) {
+  renderScene();
+  renderStats();
+  renderUpgrades(forceUpgrades);
+}
+
+function tick() {
+  const now = Date.now();
+  const delta = Math.min(2, (now - lastTickTime) / 1000);
+  lastTickTime = now;
   state.ore += orePerSecond() * delta;
   state.research += researchPerSecond() * delta;
-  render();
-  requestAnimationFrame(tick);
+  renderStats();
 }
 
 function applyOfflineProgress() {
@@ -288,13 +308,14 @@ elements.resetBtn.addEventListener("click", () => {
   if (!confirm("Reset your cosmic mining empire?")) return;
   localStorage.removeItem(STORAGE_KEY);
   state = structuredClone(defaultState);
-  lastFrame = performance.now();
-  render();
+  lastTickTime = Date.now();
+  lastUpgradeSignature = "";
+  render(true);
 });
 
 window.addEventListener("beforeunload", saveGame);
 window.setInterval(saveGame, 10000);
 
 applyOfflineProgress();
-render();
-requestAnimationFrame(tick);
+render(true);
+window.setInterval(tick, 250);
