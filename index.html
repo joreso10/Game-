@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmic Core Clicker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="nebula nebula-one"></div>
+  <div class="nebula nebula-two"></div>
+
+  <main class="game-shell">
+    <header class="hero-panel glass">
+      <div>
+        <p class="eyebrow">Low-Poly Mining Initiative</p>
+        <h1>Cosmic Core Clicker</h1>
+        <p class="tagline">Mine pixel planets, build research stations, launch blocky fleets, and compound your way across the sector.</p>
+      </div>
+      <div class="save-tools" aria-label="Save controls">
+        <button id="saveBtn" class="ghost-button">Save</button>
+        <button id="resetBtn" class="ghost-button danger">Reset</button>
+      </div>
+    </header>
+
+    <section class="stats-grid" aria-label="Resource overview">
+      <article class="stat-card glass">
+        <span>Ore</span>
+        <strong id="oreCount">0</strong>
+        <small id="orePerSecond">0 / sec</small>
+      </article>
+      <article class="stat-card glass">
+        <span>Research</span>
+        <strong id="researchCount">0</strong>
+        <small id="researchPerSecond">0 / sec</small>
+      </article>
+      <article class="stat-card glass">
+        <span>Fleet Power</span>
+        <strong id="fleetPower">0</strong>
+        <small>Multiplies mining</small>
+      </article>
+      <article class="stat-card glass">
+        <span>Planet</span>
+        <strong id="planetName">Asterion</strong>
+        <small id="planetTier">Tier 1</small>
+      </article>
+    </section>
+
+    <section class="play-grid">
+      <section class="planet-section glass" aria-label="Planet mining view">
+        <div class="space-scene">
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <button id="planetButton" class="planet" aria-label="Mine the current planet">
+            <span class="planet-glow"></span>
+            <span class="planet-facet facet-one"></span>
+            <span class="planet-facet facet-two"></span>
+            <span class="planet-facet facet-three"></span>
+            <span class="crater crater-one"></span>
+            <span class="crater crater-two"></span>
+            <span class="crater crater-three"></span>
+          </button>
+          <div class="station" aria-hidden="true">
+            <div class="station-ring"></div>
+            <div class="station-body"></div>
+            <div class="station-solar left"></div>
+            <div class="station-solar right"></div>
+          </div>
+          <div class="elevator" aria-hidden="true">
+            <div class="cable"></div>
+            <div class="lift lift-one"></div>
+            <div class="lift lift-two"></div>
+          </div>
+          <div class="ship ship-one" aria-hidden="true"></div>
+          <div class="ship ship-two" aria-hidden="true"></div>
+          <div class="ship ship-three" aria-hidden="true"></div>
+        </div>
+        <div class="mining-console">
+          <h2 id="mineTitle">Mine Asterion</h2>
+          <p id="mineDescription">Click the planet to extract ore. Each new planet greatly increases click output and unlocks stronger exponential upgrades.</p>
+          <button id="mineButton" class="primary-button">Mine Planet</button>
+          <div id="clickBurstLayer" class="click-burst-layer" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <aside class="upgrade-panel glass" aria-label="Upgrades">
+        <div class="panel-heading">
+          <p class="eyebrow">Infrastructure</p>
+          <h2>Build the Engine</h2>
+        </div>
+        <div id="upgradeList" class="upgrade-list"></div>
+      </aside>
+    </section>
+
+    <section class="progress-panel glass">
+      <div class="panel-heading">
+        <p class="eyebrow">Expansion Protocol</p>
+        <h2>Launch to the Next World</h2>
+      </div>
+      <div class="progress-copy">
+        <p id="expansionText">Research orbital automation, stockpile ore, and send a fleet to discover the next mining planet.</p>
+        <strong id="expansionCost">Cost: 2,500 ore + 250 research</strong>
+      </div>
+      <div class="progress-track" aria-label="Expansion progress">
+        <span id="expansionProgress"></span>
+      </div>
+      <button id="expandBtn" class="primary-button wide">Colonize Next Planet</button>
+    </section>
+  </main>
+
+  <template id="upgradeTemplate">
+    <button class="upgrade-card">
+      <span class="upgrade-icon"></span>
+      <span class="upgrade-info">
+        <strong class="upgrade-name"></strong>
+        <small class="upgrade-description"></small>
+        <em class="upgrade-owned"></em>
+      </span>
+      <span class="upgrade-cost"></span>
+    </button>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

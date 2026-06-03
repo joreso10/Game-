@@ -1,0 +1,19 @@
+{
+  "name": "cosmic-core-clicker",
+  "version": "1.0.0",
+  "description": "A space mining clicker game built with HTML, CSS, and JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "check": "node --check script.js && node --check index.js"
+  },
+  "keywords": [
+    "clicker",
+    "incremental-game",
+    "space",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "license": "MIT"
+}
